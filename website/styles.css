@@ -127,4 +127,73 @@ table th, table td {
   border-radius: 5px;
   cursor: pointer;
 }
+/*以下是新的*/
+/* 在原有的CSS基础上添加以下样式 */
 
+.section-title {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 20px 0;
+  color: #333;
+}
+
+.settings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+.settings-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.label-cell {
+  width: 200px;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.input-cell {
+  width: calc(100% - 200px);
+}
+
+.form-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.button-cell {
+  padding: 15px;
+}
+
+.button-cell button {
+  margin-right: 10px;
+}
+
+.button-cell button:last-child {
+  margin-right: 0;
+}
+
+/* 使用原有的按钮样式 */
+.update-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.refresh-btn {
+  background-color: #005bac;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
