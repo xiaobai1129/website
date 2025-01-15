@@ -1,85 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-lang="title">Bcom-8000 DRM调制器</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bcom-8000 DRM调制器</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <h1 data-lang="title">Bcom-8000 DRM调制器</h1>
-    </div>
-    <nav>
-      <ul class="menu">
-        <li class="dropdown">
-          <a href="#" data-lang="statusMenu">系统状态 ▼</a>
-          <ul class="dropdown-content">
-            <li><a href="index.html" data-lang="statusOverviewLink">状态概览</a></li>
-            <li><a href="logs.html" data-lang="logLink">日志</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" data-lang="systemMenu">系统设置 ▼</a>
-          <ul class="dropdown-content">
-            <li><a href="settings.html" data-lang="systemSettingsLink">基本设置</a></li>
-            <li><a href="network.html" data-lang="networkSettingsLink">网络配置</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" data-lang="drmMenu">DRM配置 ▼</a>
-          <ul class="dropdown-content">
-            <li><a href="mux_input.html" data-lang="muxInputLink">复用流输入</a></li>
-            <li><a href="modulation.html" data-lang="modulationOutputLink">调制输出</a></li>
-            <li><a href="clock_sync.html" data-lang="clockSyncLink">时钟同步</a></li>
-            <li><a href="baseband_recording.html" data-lang="basebandRecordingLink">基带录制</a></li>
-          </ul>
-        </li>
-        <li><a href="logout.html" data-lang="logoutMenu">退出</a></li>
-      </ul>
-      <button class="language-toggle" id="language-btn" data-lang="languageBtn">中文</button>
-    </nav>
-  </header>
+    <header>
+        <div class="logo">
+            <h1>Bcom-8000 DRM调制器</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#">状态 ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="index.html">状态概览</a></li>
+                        <li><a href="logs.html">日志</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="active">系统设置 ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="systemsetting.html">基本设置</a></li>
+                        <li><a href="network.html">网络配置</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">DRM ▼</a>
+                    <ul class="dropdown-content">
+                      <li><a href="mux_input.html" data-lang="muxInputLink">复用流输入</a></li>
+                      <li><a href="modulation.html" data-lang="modulationOutputLink">调制输出</a></li>
+                      <li><a href="clock_sync.html" data-lang="clockSyncLink">时钟同步</a></li>
+                      <li><a href="baseband_recording.html" data-lang="basebandRecordingLink">基带录制</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">退出</a></li>
+            </ul>
+            <button class="language-toggle">中文</button>
+        </nav>
+    </header>
 
-  <main>
-    <section class="settings-section">
-      <div class="change-password">
-        <h3>修改登录密码</h3>
-        <div class="input-group">
-          <label for="current-password">当前密码</label>
-          <input type="password" id="current-password" placeholder="请输入当前密码">
-        </div>
-        <div class="input-group">
-          <label for="new-password">新密码</label>
-          <input type="password" id="new-password" placeholder="请输入新密码">
-        </div>
-        <div class="input-group">
-          <label for="confirm-password">重复新密码</label>
-          <input type="password" id="confirm-password" placeholder="重复输入新密码">
-        </div>
-        <button class="btn btn-apply">应用</button>
-      </div>
+    <main>
+        <h2 class="section-title">修改登录密码</h2>
+        <table class="settings-table">
+            <tbody>
+                <tr>
+                    <td class="label-cell">当前密码</td>
+                    <td class="input-cell">
+                        <input type="password" id="current-password" class="form-input">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-cell">新密码</td>
+                    <td class="input-cell">
+                        <input type="password" id="new-password" class="form-input">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-cell">重复新密码</td>
+                    <td class="input-cell">
+                        <input type="password" id="confirm-new-password" class="form-input">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="button-cell">
+                        <button id="apply-password-btn" class="update-btn">应用</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-      <div class="date-time-settings">
-        <h3>日期/时间设置</h3>
-        <div class="input-group">
-          <label for="date">日期</label>
-          <input type="text" id="date" placeholder="请选择日期" />
-        </div>
-        <div class="input-group">
-          <label for="time">时间</label>
-          <input type="text" id="time" placeholder="请选择时间" />
-        </div>
-        <div class="button-group">
-          <button class="btn btn-auto" id="auto-time">从浏览器自动设置</button>
-          <button class="btn btn-save">保存</button>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <script src="global.js"></script>
-  <script src="systemsetting.js"></script>
+        <h2 class="section-title">日期/时间设置</h2>
+        <table class="settings-table">
+            <tbody>
+                <tr>
+                    <td class="label-cell">日期</td>
+                    <td class="input-cell">
+                        <input type="text" id="date" class="form-input">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-cell">时间</td>
+                    <td class="input-cell">
+                        <input type="text" id="time" class="form-input">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="button-cell">
+                        <button id="get-system-time" class="refresh-btn">从浏览器自动设置</button>
+                        <button id="save-date-time" class="update-btn">保存</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 </body>
+<script src="systemsetting.js"></script>
 </html>

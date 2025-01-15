@@ -1,0 +1,80 @@
+/* 录制相关样式 */
+.duration-input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+}
+
+.spinner-buttons {
+    display: none;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.duration-input-container:hover .spinner-buttons {
+    display: block;
+}
+
+.spinner-buttons button {
+    display: block;
+    width: 20px;
+    height: 15px;
+    padding: 0;
+    border: 1px solid #ddd;
+    background: #f8f8f8;
+    cursor: pointer;
+    font-size: 8px;
+    line-height: 1;
+}
+
+.spinner-buttons button:hover {
+    background: #e8e8e8;
+}
+
+.unit {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.record-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.record-btn.disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+}
+
+.download-btn {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.notification {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 4px;
+    z-index: 1000;
+}
