@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bcom-8000 DRM调制器</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="baseband_recording.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Bcom-8000 DRM调制器</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#">状态 ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="index.html">状态概览</a></li>
+                        <li><a href="logs.html">日志</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="active">系统设置 ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="systemsetting.html">基本设置</a></li>
+                        <li><a href="network.html">网络配置</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">DRM ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="mux_input.html" data-lang="muxInputLink">复用流输入</a></li>
+                        <li><a href="modulation.html" data-lang="modulationOutputLink">调制输出</a></li>
+                        <li><a href="clock_sync.html" data-lang="clockSyncLink">时钟同步</a></li>
+                        <li><a href="baseband_recording.html" data-lang="basebandRecordingLink">基带录制</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">登出</a></li>
+            </ul>
+            <button class="language-toggle">中文</button>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="section-title">基带数据录制</h2>
+        <table class="settings-table">
+            <tbody>
+                <tr>
+                    <td class="label-cell">录制时长</td>
+                    <td class="input-cell">
+                        <div class="duration-input-container">
+                            <input type="text" id="recording-duration" class="form-input" placeholder="请输入录制时长">
+                            <span class="unit">秒</span>
+                            <div class="spinner-buttons">
+                                <button class="spinner-up">▲</button>
+                                <button class="spinner-down">▼</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-cell">已录制</td>
+                    <td class="input-cell">
+                        <span id="recorded-time">0</span>
+                        <span class="unit">秒</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-cell">文件名</td>
+                    <td class="input-cell">
+                        <input type="text" id="filename" class="form-input" placeholder="请输入文件名">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="button-cell">
+                        <button id="record-btn" class="record-btn disabled">开始录制</button>
+                        <button id="download-btn" class="download-btn">下载</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="notification" class="notification">录制已结束</div>
+    </main>
+</body>
+<script src="baseband_recording.js"></script>
+</html>
